@@ -1,6 +1,19 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+// All element classes
+var row = $('.row');
+var past = $('.past');
+var present = $('.present');
+var future = $('.future');
+
+// Current time
+$(document).ready(function(){
+  var today = new Date();
+  var tDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  var cTime = today.getHours() + ":" + today.getMinutes();
+  var date = tDate + ' | ' + cTime;
+  $('#currentDay').text(date)
+
+})
+
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in

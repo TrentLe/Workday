@@ -22,6 +22,7 @@ body {
     color: #000000;
     border-left: 1px solid black;
     padding: 10px;
+    font-family: 'Nixie One', cursive;
   }
   .mando{
     text-align: center;
@@ -34,7 +35,7 @@ body {
   }
   
   .time-block {
-    border-radius: 15px;
+    border-radius: 0px 15px 15px 0px;
   }
   
   .row {
@@ -43,31 +44,34 @@ body {
   }
   
   .hour {
-    background-color: #ffffff;
+    background-color: cornflowerblue;
     color: #000000;
     border-radius: 15px 0px 0px 15px;
+    text-align: center;
+    padding-top: 15px;
+    text-shadow: 4px 4px 4px #aaa;
+    font-family: 'Nixie One', cursive;
    
   }
   
   .past {
     background-color: #d3d3d3;
-    color: white;
+    color: black;
   }
   
   .present {
-    background-color: #ff6961;
-    color: white;
+    background-color: gold;
+    color: black;
   }
   
   .future {
     background-color: #77dd77;
-    color: white;
+    color: black;
   }
   
   .saveBtn {
     border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 50px;
     background-color: #06aed5;
     color: white;
   }

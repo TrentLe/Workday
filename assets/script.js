@@ -4,6 +4,7 @@ var past = $('.past');
 var present = $('.present');
 var future = $('.future');
 var block = $('.time-block');
+var sButton = $('.saveBtn');
 
 
 // Current date and time
@@ -45,7 +46,10 @@ $(function () {
       }
     })
 
-
+    sButton.onclick = event => {
+      event.preventDefault();
+      localStorage.setItem('.textBox');
+    }
     
 
   });

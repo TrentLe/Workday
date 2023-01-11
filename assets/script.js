@@ -10,7 +10,7 @@ var sButton = $('.saveBtn');
 // Current date and time
 $(document).ready(function(){
  
-  var today = dayjs().format('MMM-DD-YYYY | h:mm');
+  var today = dayjs().format('ddd, MMM-DD-YYYY | h:mm');
   $('#currentDay').text(today)
 
 });
@@ -30,27 +30,38 @@ $(function () {
 
     // Function to set the colors of the time blocks
     block.each(function(){
-      var pTime = $(this).parents('row');
+      var pTime = $(this).parent('row');
       var fTime = parseInt(pTime.attr('id'));
-      var cTime = parseInt(dayjs().format('H'));
+      var cTime = parseInt(dayjs().format('h'));
 
       if (fTime < cTime){
         $(this).addClass('past');
       } else if (fTime === cTime){
-        $(this).addClass('present')
-        $(this).removeClass('past')
+        $(this).removeClass('.past')
+        $(this).addClass('.present')
       } else {
-        $(this).addClass('future')
         $(this).removeClass('past')
         $(this).removeClass('present')
+        $(this).addClass('future')
       }
+
     })
 
     sButton.onclick = event => {
-      event.preventDefault();
-      localStorage.setItem('.textBox');
+      console.log(this);
+      var txt = $(this).siblings('.time-block').val();
+      var time = $(this).parent().attr("id")
+      localStorage.setItem(time, txt)
     }
-    
+    $('#hour-9 .time-block').val(localStorage.getItem('hour-9'));
+    $('#hour-10 .time-block').val(localStorage.getItem('hour-10'));
+    $('#hour-11 .time-block').val(localStorage.getItem('hour-11'));
+    $('#hour-12 .time-block').val(localStorage.getItem('hour-12'));
+    $('#hour-13 .time-block').val(localStorage.getItem('hour-13'));
+    $('#hour-14 .time-block').val(localStorage.getItem('hour-14'));
+    $('#hour-15 .time-block').val(localStorage.getItem('hour-15'));
+    $('#hour-16 .time-block').val(localStorage.getItem('hour-16'));
+    $('#hour-17 .time-block').val(localStorage.getItem('hour-17'));
 
   });
   
